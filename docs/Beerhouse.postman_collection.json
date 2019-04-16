@@ -1,0 +1,116 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Beerhouse",
+		"_postman_id": "9fe27f4f-6ca0-004c-6bb0-fc8e10c40c85",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Beers",
+			"request": {
+				"url": "http://localhost:9000/beerhouse/beers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Beer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"beer-id\", jsonData.id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:9000/beerhouse/beers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Chocolate Vanilla Porter\",\n  \"ingredients\": \"Cocoa, Vanilla, Yeast\",\n  \"alcoholContent\": \"5.77%\",\n  \"price\": 19.99,\n  \"category\": \"Robust Porter\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Beer by Id",
+			"request": {
+				"url": "http://localhost:9000/beerhouse/beers/{{beer-id}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Beer by Id",
+			"request": {
+				"url": "http://localhost:9000/beerhouse/beers/{{beer-id}}",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Brahma\",\n  \"ingredients\": \"Corn, Water\",\n  \"alcoholContent\": \"1%\",\n  \"price\": 1.99,\n  \"category\": \"Corn Juice\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Beer by Id",
+			"request": {
+				"url": "http://localhost:9000/beerhouse/beers/{{beer-id}}",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"price\": 29.99\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Beer by Id",
+			"request": {
+				"url": "http://localhost:9000/beerhouse/beers/{{beer-id}}",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
