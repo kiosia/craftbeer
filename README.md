@@ -1,6 +1,6 @@
 # Cadastro de cervejas artesanais
 
-Para rodar testes de integração, rode `mvn test`
+Para rodar testes de integração e unitários, rode `mvn test`
 
 Para subir a aplicação, rode `mvn spring-boot:run`
 
