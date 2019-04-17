@@ -33,7 +33,6 @@ public class BeerController {
     return new MultipleBeersResponseVo(beerService.findAll(), HttpStatus.OK);
   }
 
-
   @GetMapping(value = "/{beer_id}")
   @ApiOperation(
       value = "Fetch a Beer given its Id",

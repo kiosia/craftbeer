@@ -6,7 +6,7 @@ import com.beerhouse.domain.vo.BeerVo;
 
 public class BeerMapper {
   public static BeerVo mapDomainToVo(Beer beer) {
-    return BeerVo.newBuilder()
+    return BeerVo.beerBuilder()
         .withId(beer.getId())
         .withName(beer.getName())
         .withIngredients(beer.getIngredients())
@@ -17,7 +17,7 @@ public class BeerMapper {
   }
 
   public static Beer mapVoToDomain(BeerVo beerVo) {
-    return Beer.newBuilder()
+    return Beer.beerBuilder()
         .withId(beerVo.getId())
         .withName(beerVo.getName())
         .withIngredients(beerVo.getIngredients())
@@ -28,7 +28,7 @@ public class BeerMapper {
   }
 
   public static Beer mapBaseBeerVoToDomain(BaseBeerVo baseBeerVo) {
-    return Beer.newBuilder()
+    return Beer.beerBuilder()
         .withName(baseBeerVo.getName())
         .withIngredients(baseBeerVo.getIngredients())
         .withAlcoholContent(baseBeerVo.getAlcoholContent())

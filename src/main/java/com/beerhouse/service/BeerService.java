@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 import static java.util.stream.Collectors.toList;
 
@@ -37,7 +36,7 @@ public class BeerService {
   }
 
   public BeerVo put(Integer id, BeerVo beerVo) {
-    final Beer beer = beerRepository.findById(id).orElseThrow(() -> new NotFoundException("Beer", id));
+    beerRepository.findById(id).orElseThrow(() -> new NotFoundException("Beer", id));
     beerVo.setId(id);
     return BeerMapper.mapDomainToVo(beerRepository.save(BeerMapper.mapVoToDomain(beerVo)));
   }

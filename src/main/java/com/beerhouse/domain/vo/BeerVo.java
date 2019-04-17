@@ -18,7 +18,7 @@ public class BeerVo extends BaseBeerVo {
     // Do nothing
   }
 
-  public static BeerVo.Builder newBuilder() {
+  public static BeerVo.Builder beerBuilder() {
     return new BeerVo.Builder();
   }
 

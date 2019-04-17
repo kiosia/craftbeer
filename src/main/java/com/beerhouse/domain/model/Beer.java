@@ -21,7 +21,7 @@ public class Beer {
   @Column
   private String category;
 
-  protected Beer() {
+  public Beer() {
     // Do nothing
   }
 
@@ -82,7 +82,7 @@ public class Beer {
     this.category = category;
   }
 
-  public static Builder newBuilder() {
+  public static Builder beerBuilder() {
     return new Builder();
   }
 
